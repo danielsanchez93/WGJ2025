@@ -1,0 +1,69 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "154",
+  "SoundBanks": [
+   {
+    "Id": "3161908922",
+    "Type": "User",
+    "GUID": "{D38C9CF0-CD6F-4B4A-98BF-FD4B91400214}",
+    "Language": "SFX",
+    "Hash": "{59E45688-1EA3-5A58-F2FA-18D1D4CD2B02}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\Main",
+    "ShortName": "Main",
+    "Path": "Main.bnk",
+    "Media": [
+     {
+      "Id": "269942125",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "amb_forest.wav",
+      "CachePath": "F0/{F05098AC-25B0-F057-7BE6-4C1499466CC7}.wem"
+     },
+     {
+      "Id": "974538736",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_pink_noise.wav",
+      "CachePath": "B8/{B8F5FD53-CC02-9463-70FE-9ED72F7C3D42}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "1006024461",
+      "Name": "amb_forest",
+      "ObjectPath": "\\Events\\Default Work Unit\\amb_forest",
+      "GUID": "{A8ED4B2E-FF72-4696-92B4-B79154062C19}",
+      "DurationType": "OneShot",
+      "DurationMin": "199.66133",
+      "DurationMax": "199.66133",
+      "MediaRefs": [
+       {
+        "Id": "269942125"
+       }
+      ]
+     },
+     {
+      "Id": "2686945918",
+      "Name": "sfx_pink_noise",
+      "ObjectPath": "\\Events\\Default Work Unit\\sfx_pink_noise",
+      "GUID": "{AB9F1B39-FA2C-476F-A190-0301EBADDDFD}",
+      "DurationType": "OneShot",
+      "DurationMin": "10",
+      "DurationMax": "10",
+      "MediaRefs": [
+       {
+        "Id": "974538736"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{DE49BECF-1D69-E3D5-4372-9DFB683B5C8C}"
+ }
+}

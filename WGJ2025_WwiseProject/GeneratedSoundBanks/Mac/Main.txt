@@ -1,0 +1,8 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1006024461	amb_forest			\Default Work Unit\amb_forest	
+	2686945918	sfx_pink_noise			\Default Work Unit\sfx_pink_noise	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	269942125	amb_forest	C:\Users\Aprendiz\WGJ2025\WGJ2025_WwiseProject\.cache\F0\{F05098AC-25B0-F057-7BE6-4C1499466CC7}.wem		\Actor-Mixer Hierarchy\Default Work Unit\amb_forest		38335072
+	974538736	sfx_pink_noise	C:\Users\Aprendiz\WGJ2025\WGJ2025_WwiseProject\.cache\B8\{B8F5FD53-CC02-9463-70FE-9ED72F7C3D42}.wem		\Actor-Mixer Hierarchy\Default Work Unit\sfx_pink_noise		1764144
+

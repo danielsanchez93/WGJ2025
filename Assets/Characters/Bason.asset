@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 79130368bbf6e9b4197a185a4152b7c9, type: 3}
-  m_Name: InitChat
+  m_Name: Bason
   m_EditorClassIdentifier: 
   poemLine:
-  - Lorem
-  - Ipsum
-  - Dolor
-  - Atmet
-  characterName: Char1111
+  - Baosne
+  - Bwibr
+  - Beojt
+  - Bwor
+  characterName: Arkns
   animationClip: {fileID: 0}
-  characterSprite: {fileID: 1191846204868225149, guid: f41f06aa579be3348bf85b17cbe71f23, type: 3}
+  characterSprite: {fileID: -1022122485584544178, guid: 9d58865bee06ba14e80ac2f85c0cd36f, type: 3}

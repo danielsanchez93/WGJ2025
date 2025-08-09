@@ -5,97 +5,65 @@ using UnityEngine;
 public class CharacterHandler : MonoBehaviour
 {
     public List<CharacterInfo> characters = new List<CharacterInfo>();
-    public bool ignoreEmpty = true;
-    public int randomSeed = 0;
 
     [Serializable]
-    public class CharacterPoemBundle
+    public struct OptionEntry
     {
-        public string characterName;
-        public List<string> ownLines = new List<string>();
-        public List<string> randomOtherLines = new List<string>();
+        public string text;
+        public bool isCorrect;
     }
 
-    [SerializeField] private List<CharacterPoemBundle> preview = new List<CharacterPoemBundle>();
-
-    private System.Random rng;
-
-    void Awake()
+    public List<OptionEntry> BuildOptions(CharacterInfo character)
     {
-        rng = (randomSeed != 0) ? new System.Random(randomSeed) : new System.Random();
-        BuildAllBundlesForPreview();
-    }
+        List<OptionEntry> options = new List<OptionEntry>();
 
-    private void BuildAllBundlesForPreview()
-    {
-        preview.Clear();
-        foreach (var ch in characters)
+        for (int i = 0; i < character.PoemLines.Count; i++)
         {
-            if (ch == null) continue;
-            preview.Add(BuildBundleFor(ch));
-        }
-    }
-
-    public CharacterPoemBundle BuildBundleFor(CharacterInfo character)
-    {
-        var bundle = new CharacterPoemBundle { characterName = character.CharacterName };
-
-        foreach (var line in character.PoemLines)
-        {
-            var trimmed = line?.Trim() ?? string.Empty;
-            if (ignoreEmpty && string.IsNullOrEmpty(trimmed)) continue;
-            bundle.ownLines.Add(trimmed);
+            OptionEntry e;
+            e.text = character.PoemLines[i];
+            e.isCorrect = true;
+            options.Add(e);
         }
 
-        int needed = bundle.ownLines.Count;
-        if (needed == 0) return bundle;
-
-        var othersPool = new List<string>();
-        foreach (var other in characters)
+        List<string> pool = new List<string>();
+        for (int i = 0; i < characters.Count; i++)
         {
-            if (other == null || other == character) continue;
-            foreach (var line in other.PoemLines)
+            if (characters[i] == null || characters[i] == character) continue;
+            for (int j = 0; j < characters[i].PoemLines.Count; j++)
             {
-                var t = line?.Trim() ?? string.Empty;
-                if (ignoreEmpty && string.IsNullOrEmpty(t)) continue;
-                othersPool.Add(t);
+                pool.Add(characters[i].PoemLines[j]);
             }
         }
 
-        if (othersPool.Count == 0) return bundle;
-
-        if (othersPool.Count >= needed)
+        if (pool.Count >= 2)
         {
-            for (int i = 0; i < othersPool.Count; i++)
-            {
-                int j = rng.Next(i, othersPool.Count);
-                (othersPool[i], othersPool[j]) = (othersPool[j], othersPool[i]);
-            }
-            for (int k = 0; k < needed; k++)
-                bundle.randomOtherLines.Add(othersPool[k]);
+            int a = UnityEngine.Random.Range(0, pool.Count);
+            int b;
+            do { b = UnityEngine.Random.Range(0, pool.Count); } while (b == a);
+
+            OptionEntry e1;
+            e1.text = pool[a];
+            e1.isCorrect = false;
+            options.Add(e1);
+
+            OptionEntry e2;
+            e2.text = pool[b];
+            e2.isCorrect = false;
+            options.Add(e2);
         }
         else
         {
-            bundle.randomOtherLines.AddRange(othersPool);
-            int remaining = needed - othersPool.Count;
-            for (int i = 0; i < remaining; i++)
-            {
-                int idx = rng.Next(0, othersPool.Count);
-                bundle.randomOtherLines.Add(othersPool[idx]);
-            }
+            OptionEntry e1;
+            e1.text = pool[0];
+            e1.isCorrect = false;
+            options.Add(e1);
+
+            OptionEntry e2;
+            e2.text = pool[0];
+            e2.isCorrect = false;
+            options.Add(e2);
         }
 
-        return bundle;
-    }
-
-    public List<CharacterPoemBundle> BuildAllBundles()
-    {
-        var result = new List<CharacterPoemBundle>();
-        foreach (var ch in characters)
-        {
-            if (ch == null) continue;
-            result.Add(BuildBundleFor(ch));
-        }
-        return result;
+        return options;
     }
 }

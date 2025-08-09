@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ButtonConstructor : MonoBehaviour
 {
     [SerializeField] private TMPro.TextMeshProUGUI buttonText;
-    private bool isAnswer;
+    [SerializeField] private bool isAnswer;
     
     private Button button;
     private void Start()
@@ -14,7 +14,7 @@ public class ButtonConstructor : MonoBehaviour
         button = GetComponent<Button>();
     }
 
-    public void SetButtonText(string text, bool isAnswer=false)
+    public void Setup(string text, bool isAnswer=false)
     {
         buttonText.text = text;
         isAnswer = isAnswer;

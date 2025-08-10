@@ -19,4 +19,4 @@ MonoBehaviour:
   - airnt
   characterName: Arkns
   animationClip: {fileID: 0}
-  characterSprite: {fileID: 7504055292719832793, guid: d4c3a324b633f8f43aaeb65ec09f6803, type: 3}
+  characterSprite: {fileID: 6011264122224180601, guid: 2bf9a92fb277e654fa34810399bebd00, type: 3}

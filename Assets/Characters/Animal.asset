@@ -19,7 +19,7 @@ MonoBehaviour:
   - Scales and howls spreading across the stars.
   characterName: Char1111
   animationClip: {fileID: 0}
-  characterSprite: {fileID: -8568441690721922109, guid: abc100f043e3ef74e8baf594c79af0bb, type: 3}
+  characterSprite: {fileID: -5617604925086384657, guid: 62fca88bd578cf041b46b898ccaf093a, type: 3}
   audioclip:
   - {fileID: 8300000, guid: bf9d3e6628094f2498175a68f8ea9f0d, type: 3}
   - {fileID: 0}

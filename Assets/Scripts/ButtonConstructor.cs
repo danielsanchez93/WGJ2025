@@ -16,9 +16,9 @@ public class ButtonConstructor : MonoBehaviour
 
     public void Setup(string text, bool answer)
     {
+        Click();
         buttonText.text = text;
         isAnswer = answer;
-        Click();
     }
 
     public void Click()

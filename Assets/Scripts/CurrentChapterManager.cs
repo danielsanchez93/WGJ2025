@@ -33,7 +33,8 @@ public class CurrentChapterManager : MonoBehaviour
                 chaptersApproved.Add(false);
             }
             ClearCurrentChapterGrade();
-            GameManager.Instance.NextCharacter();
+            //GameManager.Instance.NextCharacter();
+            GameManager.Instance.ShowOptionsPanel();
             //AQUI PUEDE IR UNA TRANSICION Y COSAS ASI????? PLZ
         }
     }

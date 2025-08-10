@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour
 {
     public PanelsConstructionManager panels;
-    public GameObject optionsPanel;
+    public GameObject nextPanel;
+    public GameObject poemsPanel;
     public CharacterHandler characterHandler;
     public List<CharacterInfo> characters = new List<CharacterInfo>();
     public int index;
@@ -67,6 +69,18 @@ public class GameManager : MonoBehaviour
 
         index--;
         BuildCurrent();
+    }
+
+    public void ShowOptionsPanel()
+    {
+        nextPanel.SetActive(true);
+        poemsPanel.SetActive(false);
+    }
+
+    public void ShowPoemPanel()
+    {
+        poemsPanel.SetActive(true);
+        nextPanel.SetActive(false);
     }
 
     public void SetCharacterIndex(int newIndex)

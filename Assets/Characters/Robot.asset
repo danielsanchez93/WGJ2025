@@ -19,7 +19,7 @@ MonoBehaviour:
   - Mechanisms driven by the greed for an unknown power.
   characterName: Orbis X90
   animationClip: {fileID: 0}
-  characterSprite: {fileID: 6011264122224180601, guid: 2bf9a92fb277e654fa34810399bebd00, type: 3}
+  characterSprite: {fileID: -43972106790281904, guid: 03def12b3449c844888580ae6b42c14e, type: 3}
   audioclip:
   - {fileID: 8300000, guid: 8410b13356612434f949f0ad37d7f7bb, type: 3}
   - {fileID: 8300000, guid: bf9d3e6628094f2498175a68f8ea9f0d, type: 3}

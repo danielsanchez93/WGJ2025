@@ -48,6 +48,15 @@ MonoBehaviour:
   AudioSource2: {fileID: 0}
   AudioSource3: {fileID: 0}
   AudioSource4: {fileID: 0}
-  AudioSource5: {fileID: 0}
   NoiseSource: {fileID: 0}
   correctAnswers: 0
+  levelCharacters:
+  - {fileID: 11400000, guid: 80d21075330dd764e899b96c7b2c21b1, type: 2}
+  - {fileID: 11400000, guid: 04d51c77f29500a44844432d84d0e474, type: 2}
+  - {fileID: 11400000, guid: 73d5b62beb4369542b0a7a448fdcc3ab, type: 2}
+  - {fileID: 11400000, guid: 835967c755c9cc3418edf2a0becb6f12, type: 2}
+  - {fileID: 11400000, guid: 5c50d76fdd166fe45af3f5ef9608fa87, type: 2}
+  - {fileID: 11400000, guid: 572966fc913b0244b8f26ad07d74f4f9, type: 2}
+  correctCount: 0
+  debugMode: 1
+  levelIndex: 0

@@ -39,6 +39,16 @@ public class CurrentChapterManager : MonoBehaviour
         }
     }
 
+    public bool CheckGameEnd()
+    {
+        bool gameEnd = true;
+        foreach (bool b in currentChaptersApproved)
+        {
+            gameEnd = b && gameEnd;
+        }
+        return gameEnd;
+    }
+
     public void ClearAll()
     {
         chaptersApproved.Clear();

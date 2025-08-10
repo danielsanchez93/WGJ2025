@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour
@@ -8,6 +9,8 @@ public class GameManager : MonoBehaviour
     public PanelsConstructionManager panels;
     public GameObject nextPanel;
     public GameObject poemsPanel;
+    public GameObject winPanel;
+    public GameObject losePanel;
     public CharacterHandler characterHandler;
     public List<CharacterInfo> characters = new List<CharacterInfo>();
     public int index;
@@ -49,6 +52,15 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Game Over");
             ///AQUI VA EL FINAL DEL JUEGO
+            bool win = FindAnyObjectByType<CurrentChapterManager>().CheckGameEnd();
+            if (win)
+            {
+                winPanel.SetActive(true);
+            }
+            else
+            {
+                losePanel.SetActive(true);
+            }
         }
         else
         {
@@ -58,6 +70,11 @@ public class GameManager : MonoBehaviour
             BuildCurrent();
         }
 
+    }
+
+    public void ReturnoToMenu()
+    {
+        SceneManager.LoadScene("Main");
     }
 
     public void PreviousCharacter()

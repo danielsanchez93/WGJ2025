@@ -28,6 +28,7 @@ public class ButtonConstructor : MonoBehaviour
             button.interactable = false;
             PoemArrangeManager.instance.AddLine(buttonText.text);
             CurrentChapterManager.instance.CurrentChapterGrade(isAnswer);
+            AudioManager.Instance.AnswerFeedback(isAnswer);
             if (isAnswer)
             {
                 ///AQUI VA EL AUDIO POSITIVO OSEASE qUe EsSta CorrRectOhg

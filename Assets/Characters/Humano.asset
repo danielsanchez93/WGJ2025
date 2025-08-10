@@ -20,3 +20,8 @@ MonoBehaviour:
   characterName: Char1111
   animationClip: {fileID: 0}
   characterSprite: {fileID: -8568441690721922109, guid: abc100f043e3ef74e8baf594c79af0bb, type: 3}
+  audioclip:
+  - {fileID: 8300000, guid: a8fb1613a4a24184895cab929e21bc63, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

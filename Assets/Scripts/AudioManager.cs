@@ -16,7 +16,7 @@ public class AudioManager : MonoBehaviour
     public AudioSource AudioSource2;
     public AudioSource AudioSource3;
     public AudioSource AudioSource4;
-    public AudioSource AudioSource5;
+
 
     // Dedicated noise AudioSource whose volume can be lowered on correct answers.
     public AudioSource NoiseSource;
@@ -25,7 +25,12 @@ public class AudioManager : MonoBehaviour
     public int correctAnswers = 0;
 
     // A list of AudioClip arrays, where each array contains 5 clips for one level.
-    public List<AudioClip[]> levelAudioClips = new List<AudioClip[]>();
+    public List<CharacterInfo> levelCharacters;
+
+    public int correctCount = 0;
+
+    public bool debugMode;
+    public int levelIndex;
 
     // Initialize the singleton instance.
     private void Awake()
@@ -45,6 +50,24 @@ public class AudioManager : MonoBehaviour
         // Keep this object across scene loads.
         DontDestroyOnLoad(gameObject);
     }
+
+    private void Update()
+    {
+        if (debugMode)
+        {
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                SetLevelAudioClips(levelIndex);
+            }
+
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                AnswerFeedback(true);
+            }
+        }
+    }
+
+    
 
     /// <summary>
     /// Play a clip on a specified AudioSource.
@@ -71,10 +94,6 @@ public class AudioManager : MonoBehaviour
                 AudioSource4.clip = clip;
                 AudioSource4.Play();
                 break;
-            case 5:
-                AudioSource5.clip = clip;
-                AudioSource5.Play();
-                break;
             default:
                 Debug.LogWarning("AudioManager: Invalid sourceNumber passed to Play()");
                 break;
@@ -88,28 +107,58 @@ public class AudioManager : MonoBehaviour
     /// <param name="sourceNumber">AudioSource slot (1–5) to use for playback.</param>
     /// <param name="loweredVolume">Volume level to set for the NoiseSource.</param>
     /// <param name="correct">Whether the player's answer is correct.</param>
-    public void AnswerFeedback(AudioClip clip, int sourceNumber, float loweredVolume, bool correct)
+    public void AnswerFeedback(bool correct)
     {
         if (!correct)
         {
-            // Wrong answer—no action taken, no increment in correctAnswers.
+            // Wrong answer—no changes
             return;
         }
 
-        // Right answer—play the clip.
-        Play(clip, sourceNumber);
+        correctAnswers += 1; 
 
-        // Lower the noise volume.
+        AudioSource targetSource = null;
+
+        switch (correctAnswers)
+        {
+            case 1:
+                targetSource = AudioSource1;
+                break;
+            case 2:
+                targetSource = AudioSource2;
+                break;
+            case 3:
+                targetSource = AudioSource3;
+                break;
+            case 4:
+                targetSource = AudioSource4;
+                break;
+            default:
+                Debug.LogWarning("AudioManager: Invalid sourceNumber passed to AnswerFeedback()");
+                break;
+        }
+
+        if (targetSource != null)
+        {
+            if (!targetSource.isPlaying)
+            {
+                targetSource.loop = true; // make sure it loops
+                targetSource.Play();
+            }
+        }
+
+        // Lower the noise volume by -2 dB each correct answer
         if (NoiseSource != null)
         {
-            NoiseSource.volume = loweredVolume;
+            float reductionFactor = Mathf.Pow(10f, -6f / 20f); // ~0.7943
+            NoiseSource.volume *= reductionFactor;
+            NoiseSource.volume = Mathf.Max(0f, NoiseSource.volume); // no negative values
         }
         else
         {
             Debug.LogWarning("AudioManager: NoiseSource is not assigned.");
         }
 
-        // Increment the correct answer counter.
         correctAnswers++;
     }
 
@@ -117,19 +166,20 @@ public class AudioManager : MonoBehaviour
     /// Overwrites the AudioClips assigned to the AudioSources based on a level index.
     /// </summary>
     /// <param name="levelIndex">Index of the level whose audio should be loaded.</param>
-    public void SetLevelAudioClips(int levelIndex)
+    public void SetLevelAudioClips(int inLevelIndex)
     {
+        levelIndex = inLevelIndex;
         // Validate index.
-        if (levelIndex < 0 || levelIndex >= levelAudioClips.Count)
+        if (levelIndex < 0 || levelIndex >= levelCharacters.Count)
         {
             Debug.LogWarning("AudioManager: Invalid levelIndex passed to SetLevelAudioClips().");
             return;
         }
 
-        AudioClip[] clipsForLevel = levelAudioClips[levelIndex];
+        var clipsForLevel = levelCharacters[levelIndex].AudioClips;
 
         // Validate that we have exactly 5 clips for this level.
-        if (clipsForLevel.Length != 5)
+        if (clipsForLevel.Count != 4)
         {
             Debug.LogWarning("AudioManager: Each level must have exactly 5 audio clips assigned.");
             return;
@@ -140,7 +190,7 @@ public class AudioManager : MonoBehaviour
         AudioSource2.clip = clipsForLevel[1];
         AudioSource3.clip = clipsForLevel[2];
         AudioSource4.clip = clipsForLevel[3];
-        AudioSource5.clip = clipsForLevel[4];
+       
     }
 }
 

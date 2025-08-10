@@ -76,5 +76,6 @@ public class GameManager : MonoBehaviour
         if (newIndex >= characters.Count) newIndex = characters.Count;
         index = newIndex;
         BuildCurrent();
+        
     }
 }

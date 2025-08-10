@@ -20,3 +20,8 @@ MonoBehaviour:
   characterName: Arkns
   animationClip: {fileID: 0}
   characterSprite: {fileID: 6011264122224180601, guid: 2bf9a92fb277e654fa34810399bebd00, type: 3}
+  audioclip:
+  - {fileID: 8300000, guid: 76a92848232930a4083f69a9e9b648c7, type: 3}
+  - {fileID: 8300000, guid: c5b8a8b2521a3a046a0d5587b2029b34, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}

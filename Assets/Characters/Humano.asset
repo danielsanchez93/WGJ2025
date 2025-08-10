@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Humano
   m_EditorClassIdentifier: 
   poemLine:
-  - Lorem
-  - Ipsum
-  - Dolor
-  - Atmet
+  - It was a journey of lights, of specters, of stars.
+  - A suit full of colors that breathed and pulsed to the rhythm of my steps.
+  - A sudden betrayal of the blood oath
+  - Would you seize my journey to escape the chaos of your mind?
   characterName: Char1111
   animationClip: {fileID: 0}
   characterSprite: {fileID: -8568441690721922109, guid: abc100f043e3ef74e8baf594c79af0bb, type: 3}

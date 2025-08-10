@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Animal
   m_EditorClassIdentifier: 
   poemLine:
-  - Lorem
-  - Ipsum
-  - Dolor
-  - Atmet
+  - Opposing organisms that, in an uncontrolled fusion
+  - Evoke in the infinite an unsatisfying answer.
+  - But destruction came, unforeseen
+  - Scales and howls spreading across the stars.
   characterName: Char1111
   animationClip: {fileID: 0}
   characterSprite: {fileID: -8568441690721922109, guid: abc100f043e3ef74e8baf594c79af0bb, type: 3}

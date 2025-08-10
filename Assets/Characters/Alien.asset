@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Alien
   m_EditorClassIdentifier: 
   poemLine:
-  - Baosne
-  - Bwibr
-  - Beojt
-  - Bwor
+  - The substance that covers the world is the source of damnation.
+  - Viscous arms laid bare, choking my being.
+  - Let me succumb to the poison that runs through my veins
+  - A lavish waste of guilt that drowns my sorrows.
   characterName: Arkns
   animationClip: {fileID: 0}
   characterSprite: {fileID: 6011264122224180601, guid: 2bf9a92fb277e654fa34810399bebd00, type: 3}

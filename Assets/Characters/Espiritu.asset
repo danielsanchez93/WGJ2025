@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Espiritu
   m_EditorClassIdentifier: 
   poemLine:
-  - Lorem
-  - Ipsum
-  - Dolor
-  - Atmet
+  - In the entropy of the universe, its expansion is unstoppable
+  - The energy of the soul that summons travelers
+  - Who lose themselves in the limbo of black holes
+  - A fatal attraction that rebuilds the universe.
   characterName: Char1111
   animationClip: {fileID: 0}
   characterSprite: {fileID: -8568441690721922109, guid: abc100f043e3ef74e8baf594c79af0bb, type: 3}

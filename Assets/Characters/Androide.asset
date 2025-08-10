@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Androide
   m_EditorClassIdentifier: 
   poemLine:
-  - Lorem
-  - Ipsum
-  - Dolor
-  - Atmet
+  - The heart that beats within the echo of metal
+  - On its passage by Saturn, it unravels in an instant.
+  - To take the pieces and vanish without a trace,
+  - Awaiting a return that never comes.
   characterName: Char1111
   animationClip: {fileID: 0}
   characterSprite: {fileID: -8568441690721922109, guid: abc100f043e3ef74e8baf594c79af0bb, type: 3}

@@ -20,3 +20,8 @@ MonoBehaviour:
   characterName: Orbis X90
   animationClip: {fileID: 0}
   characterSprite: {fileID: 6011264122224180601, guid: 2bf9a92fb277e654fa34810399bebd00, type: 3}
+  audioclip:
+  - {fileID: 8300000, guid: 8410b13356612434f949f0ad37d7f7bb, type: 3}
+  - {fileID: 8300000, guid: bf9d3e6628094f2498175a68f8ea9f0d, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}

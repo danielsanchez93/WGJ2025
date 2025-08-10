@@ -14,9 +14,9 @@ public class ButtonConstructor : MonoBehaviour
         button = GetComponent<Button>();
     }
 
-    public void Setup(string text, bool isAnswer=false)
+    public void Setup(string text, bool answer)
     {
         buttonText.text = text;
-        isAnswer = isAnswer;
+        isAnswer = answer;
     }
 }

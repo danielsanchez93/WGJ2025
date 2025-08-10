@@ -32,6 +32,8 @@ public class ButtonConstructor : MonoBehaviour
             {
                 ///AQUI VA EL AUDIO POSITIVO OSEASE qUe EsSta CorrRectOhg
                 Debug.Log("Good Answer");
+                AudioManager.Instance.AnswerFeedback(correct);
+
             }
             else
             {

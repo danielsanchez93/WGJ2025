@@ -28,6 +28,17 @@ public class GameManager : MonoBehaviour
     {
         CharacterInfo character = characters[index];
         panels.Build(character);
+        BuildAudio();    
+    }
+
+    public void BuildAudio()
+    {
+
+        // NEW: Set audio clips for this level
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.SetLevelAudioClips(index);
+        }
     }
 
     public void NextCharacter()
@@ -40,6 +51,7 @@ public class GameManager : MonoBehaviour
         else
         {
             index++;
+            
             PoemArrangeManager.instance.ClearPoem();
             BuildCurrent();
         }

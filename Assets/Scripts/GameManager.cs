@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public PanelsConstructionManager panels;
+    public GameObject optionsPanel;
     public CharacterHandler characterHandler;
     public List<CharacterInfo> characters = new List<CharacterInfo>();
     public int index;
@@ -31,13 +32,17 @@ public class GameManager : MonoBehaviour
 
     public void NextCharacter()
     {
-        if (index > characters.Count)
+        if (index >= characters.Count)
         {
             Debug.Log("Game Over");
+            ///AQUI VA EL FINAL DEL JUEGO
+        }
+        else
+        {
+            index++;
+            BuildCurrent();
         }
 
-        index++;
-        BuildCurrent();
     }
 
     public void PreviousCharacter()

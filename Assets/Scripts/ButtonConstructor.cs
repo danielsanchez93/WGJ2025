@@ -9,7 +9,7 @@ public class ButtonConstructor : MonoBehaviour
     [SerializeField] private bool isAnswer;
     
     private Button button;
-    private void Start()
+    private void Awake()
     {
         button = GetComponent<Button>();
     }
@@ -18,5 +18,26 @@ public class ButtonConstructor : MonoBehaviour
     {
         buttonText.text = text;
         isAnswer = answer;
+        Click();
+    }
+
+    public void Click()
+    {
+        button.onClick.AddListener((() =>
+        {
+            button.interactable = false;
+            PoemArrangeManager.instance.AddLine(buttonText.text);
+            CurrentChapterManager.instance.CurrentChapterGrade(isAnswer);
+            if (isAnswer)
+            {
+                ///AQUI VA EL AUDIO POSITIVO OSEASE qUe EsSta CorrRectOhg
+                Debug.Log("Good Answer");
+            }
+            else
+            {
+                ///AQUI VA EL AUDIO NEGATIVO
+                Debug.Log("Bad Answer");
+            }
+        }));
     }
 }

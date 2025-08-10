@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79130368bbf6e9b4197a185a4152b7c9, type: 3}
+  m_Name: Robot
+  m_EditorClassIdentifier: 
+  poemLine:
+  - In the mountains of planet 002, we found crystals
+  - Shifting particles from a world opening before our eyes.
+  - ' How can we understand their transformation? take pieces of me to make them
+    their own!'
+  - Mechanisms driven by the greed for an unknown power.
+  characterName: Orbis X90
+  animationClip: {fileID: 0}
+  characterSprite: {fileID: 6011264122224180601, guid: 2bf9a92fb277e654fa34810399bebd00, type: 3}

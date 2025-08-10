@@ -132,12 +132,12 @@ GameObject:
   - component: {fileID: 9247983}
   - component: {fileID: 9247982}
   m_Layer: 5
-  m_Name: Panel  Next
+  m_Name: Panel Next
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9247981
 RectTransform:
   m_ObjectHideFlags: 0
@@ -424,6 +424,9 @@ MonoBehaviour:
   characters:
   - {fileID: 11400000, guid: 572966fc913b0244b8f26ad07d74f4f9, type: 2}
   - {fileID: 11400000, guid: 80d21075330dd764e899b96c7b2c21b1, type: 2}
+  - {fileID: 11400000, guid: 5c50d76fdd166fe45af3f5ef9608fa87, type: 2}
+  - {fileID: 11400000, guid: 04d51c77f29500a44844432d84d0e474, type: 2}
+  - {fileID: 11400000, guid: 73d5b62beb4369542b0a7a448fdcc3ab, type: 2}
   - {fileID: 11400000, guid: 835967c755c9cc3418edf2a0becb6f12, type: 2}
   index: 0
 --- !u!4 &562998402
@@ -1434,7 +1437,7 @@ MonoBehaviour:
   m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 350, y: 20}
+  m_CellSize: {x: 330, y: 20}
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2

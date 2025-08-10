@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
         else
         {
             index++;
+            PoemArrangeManager.instance.ClearPoem();
             BuildCurrent();
         }
 
